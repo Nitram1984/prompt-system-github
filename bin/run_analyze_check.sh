@@ -108,7 +108,11 @@ if ! "$INSTALLER" --analyze-only --target-home "$TARGET_HOME" --profile "$PROFIL
   exit 1
 fi
 
-latest_precheck="$(ls -1t "$PRECHECK_DIR" 2>/dev/null | head -n1 || true)"
+latest_precheck="$(
+  find "$PRECHECK_DIR" -mindepth 1 -maxdepth 1 -type d -printf '%T@ %f\n' 2>/dev/null \
+    | sort -nr \
+    | awk 'NR==1{print $2}'
+)"
 if [[ -z "$latest_precheck" ]]; then
   log_alert "No precheck folder found after analyze run."
   exit 1
