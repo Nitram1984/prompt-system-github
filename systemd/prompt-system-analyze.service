@@ -1,0 +1,12 @@
+[Unit]
+Description=Prompt-System Analyze Drift Check
+Documentation=file://{{BASE_DIR}}/MONITORING.md
+After=default.target
+
+[Service]
+Type=oneshot
+WorkingDirectory={{BASE_DIR}}
+ExecStart={{BASE_DIR}}/bin/run_analyze_check.sh --profile auto --target-home /
+Nice=10
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7

@@ -1,0 +1,3 @@
+# Add relative target paths here, one file per line.
+# Example:
+# projects/my-agent/prompts/system_prompt.txt

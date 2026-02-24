@@ -1,0 +1,11 @@
+# Runtime output
+precheck/
+backups/
+monitor/
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store

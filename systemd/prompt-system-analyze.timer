@@ -1,0 +1,13 @@
+[Unit]
+Description=Run Prompt-System Analyze Check every 30 minutes
+Documentation=file://{{BASE_DIR}}/MONITORING.md
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=30min
+RandomizedDelaySec=3min
+Persistent=true
+Unit=prompt-system-analyze.service
+
+[Install]
+WantedBy=timers.target

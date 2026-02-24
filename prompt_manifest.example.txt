@@ -1,0 +1,8 @@
+# Example manifest entries (relative to target root)
+# Do not store personal absolute paths here.
+# Add one file per line.
+
+projects/my-agent/prompts/system_prompt.txt
+projects/my-agent/prompts/task_guard.prompt
+projects/my-skills/code-agent/templates/code_review_prompt.md
+projects/my-skills/ip-config-manager/templates/auto_update_prompt.md
