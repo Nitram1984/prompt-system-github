@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Shellcheck
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y shellcheck
+
+      - name: Bash Syntax Check
+        run: |
+          bash -n install_prompts.sh
+          bash -n bin/run_analyze_check.sh
+          bash -n bin/install_systemd_user.sh
+          bash -n tests/smoke_test.sh
+
+      - name: Shellcheck
+        run: shellcheck install_prompts.sh bin/*.sh tests/smoke_test.sh
+
+      - name: Python Compile Check
+        run: python -m py_compile recommend_prompts.py
+
+      - name: Smoke Test
+        run: bash tests/smoke_test.sh

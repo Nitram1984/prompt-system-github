@@ -17,6 +17,8 @@ Dieses Repo ist fuer GitHub ohne persoenliche Daten vorbereitet:
 - `bin/install_systemd_user.sh`: Installiert user-level service/timer
 - `systemd/*.service|*.timer`: Templates fuer Monitoring
 - `prompt_manifest.example.txt`: Beispiel fuer eigene Manifest-Datei
+- `.github/workflows/ci.yml`: CI mit Syntax-, Lint- und Smoke-Tests
+- `tests/smoke_test.sh`: End-to-End-Test fuer Analyze + Dry-Run
 
 ## Quick Start
 
@@ -44,8 +46,19 @@ systemctl --user status prompt-system-analyze.timer
 
 Details: `MONITORING.md`
 
+## Qualitaet
+
+Jeder Push/PR auf `main` wird automatisch geprueft:
+
+- Bash-Syntax (`bash -n`)
+- Shellcheck (in CI)
+- Python-Compile-Check
+- End-to-End Smoke-Test (`tests/smoke_test.sh`)
+
 ## Datenschutz
 
 - Keine privaten Prompt-Dateien einchecken.
 - `prompt_manifest.txt` nur mit nicht-sensitiven relativen Pfaden versionieren.
 - Laufzeitdaten (`precheck/`, `backups/`, `monitor/`) sind in `.gitignore`.
+
+Mehr dazu: `MONITORING.md` und `SECURITY.md`.
