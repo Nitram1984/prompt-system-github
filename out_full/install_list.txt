@@ -1,0 +1,4 @@
+projects/my-agent/prompts/system_prompt.txt
+roo-code/src/index.ts
+skills/code-agent/skill.js
+support-prompt.ts
