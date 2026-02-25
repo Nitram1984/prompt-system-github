@@ -34,7 +34,7 @@ COMPONENTS: Tuple[str, ...] = (
 )
 
 
-def parse_args() -> argparse.Namespace:
+def parse_args(argv: List[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Recommend prompt files for install.")
     parser.add_argument("--manifest", required=True, help="Path to prompt manifest file")
     parser.add_argument("--source-dir", required=True, help="Root folder of package files")
@@ -56,7 +56,7 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Include tests/snapshots in install list",
     )
-    return parser.parse_args()
+    return parser.parse_args(argv)
 
 
 def is_not_needed(rel: str) -> bool:
