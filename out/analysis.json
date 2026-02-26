@@ -1,0 +1,24 @@
+{
+  "detected_components": [
+    "general"
+  ],
+  "include_critical": false,
+  "include_not_needed": false,
+  "install_count": 0,
+  "invalid_entry_count": 0,
+  "missing_components": [
+    "roo_code",
+    "skill_code_agent",
+    "skill_ip_config_manager",
+    "prompt_agent_workspace",
+    "aidrax_agent_standards",
+    "enterprise_prompts"
+  ],
+  "missing_file_count": 0,
+  "not_needed_count": 0,
+  "optional_unmatched_count": 0,
+  "profile": "auto",
+  "recommended_count": 0,
+  "system_critical_count": 0,
+  "total_in_manifest": 0
+}

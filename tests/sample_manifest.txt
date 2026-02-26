@@ -1,0 +1,7 @@
+# Test manifest entries (some exist in tests/sample_src, some intentionally missing)
+projects/my-agent/prompts/system_prompt.txt
+roo-code/src/index.ts
+skills/code-agent/skill.js
+support-prompt.ts
+missing/path/does_not_exist.txt
+__tests__/example.spec.ts

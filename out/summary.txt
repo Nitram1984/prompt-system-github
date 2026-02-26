@@ -1,0 +1,11 @@
+Profile:              auto
+Total in manifest:    0
+Recommended:          0
+System-critical:      0
+Not-needed:           0
+Optional-unmatched:   0
+Planned for install:  0
+Invalid entries:      0
+Missing files:        0
+Detected components:  general
+Missing components:   roo_code, skill_code_agent, skill_ip_config_manager, prompt_agent_workspace, aidrax_agent_standards, enterprise_prompts
